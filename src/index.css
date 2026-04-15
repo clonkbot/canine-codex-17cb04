@@ -1,0 +1,148 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #F9F6F0;
+  --charcoal: #2D2926;
+  --terracotta: #C45C3E;
+  --forest: #3A5A40;
+}
+
+@layer base {
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background-color: var(--cream);
+    color: var(--charcoal);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .bg-cream {
+    background-color: var(--cream);
+  }
+  .bg-charcoal {
+    background-color: var(--charcoal);
+  }
+  .bg-terracotta {
+    background-color: var(--terracotta);
+  }
+  .bg-forest {
+    background-color: var(--forest);
+  }
+  .text-cream {
+    color: var(--cream);
+  }
+  .text-charcoal {
+    color: var(--charcoal);
+  }
+  .text-terracotta {
+    color: var(--terracotta);
+  }
+  .text-forest {
+    color: var(--forest);
+  }
+  .border-cream {
+    border-color: var(--cream);
+  }
+  .border-charcoal {
+    border-color: var(--charcoal);
+  }
+  .border-terracotta {
+    border-color: var(--terracotta);
+  }
+  .border-forest {
+    border-color: var(--forest);
+  }
+  .ring-terracotta {
+    --tw-ring-color: var(--terracotta);
+  }
+  .shadow-terracotta {
+    --tw-shadow-color: var(--terracotta);
+  }
+  .from-terracotta {
+    --tw-gradient-from: var(--terracotta);
+  }
+  .to-terracotta {
+    --tw-gradient-to: var(--terracotta);
+  }
+  .from-forest {
+    --tw-gradient-from: var(--forest);
+  }
+  .to-forest {
+    --tw-gradient-to: var(--forest);
+  }
+
+  .font-display {
+    font-family: 'Playfair Display', Georgia, serif;
+  }
+  .font-body {
+    font-family: 'Source Serif 4', Georgia, serif;
+  }
+}
+
+@layer components {
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--charcoal);
+  opacity: 0.2;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--terracotta);
+}
+
+/* Line clamp utility */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Smooth transitions */
+* {
+  transition-property: color, background-color, border-color, box-shadow, transform, opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--terracotta);
+  color: white;
+}
